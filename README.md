@@ -17,4 +17,6 @@ will become
 
 ### find a specific line in file when line number is given
 
+```perl
 perl -ne 'print "$ARGV : $_" if $. == <line number>; } continue { close ARGV if eof;' <file name>
+```
