@@ -20,3 +20,7 @@ will become
 ```perl
 perl -ne 'print "$ARGV : $_" if $. == <line number>; } continue { close ARGV if eof;' <file name>
 ```
+
+### how to get the longitude latitude from city
+
+curl http://maps.googleapis.com/maps/api/geocode/json?address=London&sensor=false
