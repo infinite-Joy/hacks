@@ -24,3 +24,19 @@ perl -ne 'print "$ARGV : $_" if $. == <line number>; } continue { close ARGV if 
 ### how to get the longitude latitude from city
 
 curl http://maps.googleapis.com/maps/api/geocode/json?address=London&sensor=false
+
+### vimrc
+This is my vimrc file
+
+clone it
+```
+git clone https://github.com/infinite-Joy/hacks.git
+```
+put it in the home folder and install
+```
+cd ~
+cp hacks/myvimrc .vimrc
+
+:so ~/.vimrc
+:PluginInstall
+```
