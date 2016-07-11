@@ -28,6 +28,8 @@ curl http://maps.googleapis.com/maps/api/geocode/json?address=London&sensor=fals
 ### vimrc
 This is my vimrc file
 
+docs: https://github.com/klen/python-mode
+
 clone it
 ```
 git clone https://github.com/infinite-Joy/hacks.git
