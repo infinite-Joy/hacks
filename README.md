@@ -42,3 +42,6 @@ cp hacks/myvimrc .vimrc
 :so ~/.vimrc
 :PluginInstall
 ```
+
+### get output from a webpage
+perl -MLWP::Simple -e "getprint 'https://domain.com/dummy/context/root/with/rest/api';"
