@@ -45,3 +45,11 @@ cp hacks/myvimrc .vimrc
 
 ### get output from a webpage
 perl -MLWP::Simple -e "getprint 'https://domain.com/dummy/context/root/with/rest/api';"
+
+### how to find which process taking which pid
+```bash
+port=$1
+addr=`netstat -Aan | grep $port | awk '{print $1}'`
+pid=`rmsock $addr tcpcb | awk '{print $9}'`
+ps -ef | grep $pid
+```
