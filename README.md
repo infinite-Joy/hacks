@@ -29,6 +29,9 @@ curl http://maps.googleapis.com/maps/api/geocode/json?address=London&sensor=fals
 This is my vimrc file
 
 docs: https://github.com/klen/python-mode
+http://docs.python-guide.org/en/latest/dev/env/
+
+Also first install pathogen for this to work
 
 clone it
 ```
