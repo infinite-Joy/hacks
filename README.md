@@ -28,6 +28,8 @@ curl http://maps.googleapis.com/maps/api/geocode/json?address=London&sensor=fals
 ### vimrc
 This is my vimrc file
 
+docs: https://github.com/klen/python-mode
+
 clone it
 ```
 git clone https://github.com/infinite-Joy/hacks.git
@@ -39,4 +41,15 @@ cp hacks/myvimrc .vimrc
 
 :so ~/.vimrc
 :PluginInstall
+```
+
+### get output from a webpage
+perl -MLWP::Simple -e "getprint 'https://domain.com/dummy/context/root/with/rest/api';"
+
+### how to find which process taking which pid
+```bash
+port=$1
+addr=`netstat -Aan | grep $port | awk '{print $1}'`
+pid=`rmsock $addr tcpcb | awk '{print $9}'`
+ps -ef | grep $pid
 ```
