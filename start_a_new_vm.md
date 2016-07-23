@@ -33,11 +33,11 @@ sudo easy_install3 pip
 
 conda create --name py3_venv_deepL_conda python
 
-# To activate this environment, use:
-# $ source activate py3_venv_deepL_conda
-#
-# To deactivate this environment, use:
-# $ source deactivate
+-- To activate this environment, use:
+-- $ source activate py3_venv_deepL_conda
+
+-- To deactivate this environment, use:
+-- $ source deactivate
 
 
 # use this for  conda
