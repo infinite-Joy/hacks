@@ -56,3 +56,12 @@ addr=`netstat -Aan | grep $port | awk '{print $1}'`
 pid=`rmsock $addr tcpcb | awk '{print $9}'`
 ps -ef | grep $pid
 ```
+
+### install docker in ubuntu 32 bit
+
+http://stackoverflow.com/questions/33420241/docker-on-ubuntu-15-10-32-bit-os-and-processor/38681348#38681348
+```bash
+git clone https://github.com/docker-32bit/ubuntu.git
+cd ubuntu
+bash build-image.sh
+```
