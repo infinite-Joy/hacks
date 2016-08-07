@@ -26,6 +26,23 @@ set foldmethod=syntax
 set splitbelow
 set splitright
 
+" for haskell
+let g:haskell_enable_quantification = 1
+let g:haskell_enable_recursivedo = 1
+let g:haskell_enable_arrowsyntax = 1
+let g:haskell_enable_pattern_synonyms = 1
+let g:haskell_enable_typeroles = 1
+let g:haskell_enable_static_pointers = 1
+
+" haskell indentation depth
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 2
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -56,6 +73,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+" use ghc functionality for haskell files
+au BufNewFile,BufRead,Bufenter *.hs compiler ghc
 
 
 Plugin 'vim-scripts/indentpython.vim'
@@ -108,5 +128,9 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+" enable filetype detection, plus loading of filetype plugins
+filetype plugin on
+
 filetype plugin indent on    " required
 

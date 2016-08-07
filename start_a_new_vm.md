@@ -60,6 +60,10 @@ wget http://www.vim.org/scripts/download_script.php?src_id=21056
 mkdir ~/.vim/syntax
 mv download_script.php\?src_id\=21056 ~/.vim/syntax/python.vim
 
+# add haskell vim
+follow this document
+https://github.com/raichoo/haskell-vim
+
 ## install all the plugins
 
 vim +PluginInstall +qall
