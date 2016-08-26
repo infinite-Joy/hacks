@@ -65,3 +65,6 @@ git clone https://github.com/docker-32bit/ubuntu.git
 cd ubuntu
 bash build-image.sh
 ```
+
+### copy a list of files later older than 2 days but not older than 30 days to new_folder
+```find . -type f -mtime +2 -a -mtime -30 -print | xargs -I {} cp {} new_folder```
