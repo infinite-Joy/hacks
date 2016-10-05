@@ -72,3 +72,7 @@ bash build-image.sh
 ### Use jq to pretty print some json data with ANSI color coded syntax and use -R in less to process the color.
 
 jq -C '.' data.json | less -R
+
+### Generate output similar to 'tree' without using tree
+
+```find . -print | sort | sed 's;[^/]*/;|---;g;s;---|; |;g'```
