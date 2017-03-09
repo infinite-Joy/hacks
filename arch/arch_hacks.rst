@@ -8,3 +8,7 @@
     mencoder test.mkv -oac copy -ovc x264 -o test_low_qual1.avi
 
 Refs: https://wiki.archlinux.org/index.php/MEncoder
+
+**conky desktop**
+
+refer to documentation at https://github.com/alexbel/conky
