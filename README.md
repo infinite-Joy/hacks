@@ -76,3 +76,7 @@ jq -C '.' data.json | less -R
 ### Generate output similar to 'tree' without using tree
 
 ```find . -print | sort | sed 's;[^/]*/;|---;g;s;---|; |;g'```
+
+### How to check the links in the webpage and find  broken links
+
+    wget --spider -r -nd -nv -H -l 1 -w 2 -o run1.log  https://flawcode.com/episode/show/6/
