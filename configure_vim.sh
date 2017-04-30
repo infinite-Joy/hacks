@@ -1,5 +1,14 @@
 # start a new vim
 
+# to install in ubuntu
+# if present platform is ubuntu then install
+if python -mplatform | grep -qi Ubuntu; then
+    sudo add-apt-repository ppa:pi-rho/dev
+    sudo apt-get update
+    sudo apt-get install vim-gtk3 
+fi
+
+
 # get vimrc
 wget https://raw.githubusercontent.com/infinite-Joy/hacks/master/my_vimrc
 mv my_vimrc ~/.vimrc
