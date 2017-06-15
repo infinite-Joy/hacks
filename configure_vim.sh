@@ -26,3 +26,8 @@ mkdir -p bundle && cd bundle
 git clone https://github.com/klen/python-mode.git
 
 vim +PluginInstall +qall
+
+# in case you are interested in clojure development do the following
+cd ~/.vim/bundle
+git clone git://github.com/tpope/vim-fireplace.git
+
