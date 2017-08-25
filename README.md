@@ -80,3 +80,12 @@ jq -C '.' data.json | less -R
 ### How to check the links in the webpage and find  broken links
 
     wget --spider -r -nd -nv -H -l 1 -w 2 -o run1.log  https://flawcode.com/episode/show/6/
+
+### In case you want jupyter notebook to have a new environment as well
+
+source activate myenv
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+source activate other-env
+python -m ipykernel install --user --name other-env --display-name "Python (other-env)"
+
+source: http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments
