@@ -93,3 +93,13 @@ source: http://ipython.readthedocs.io/en/stable/install/kernel_install.html#kern
 ### Count the number of commits in the last one month.
 
     git log --before={`date "+%Y-%m-01"`} --after={`date --date='-1 month' "+%Y-%m-01"`} --author="joydeep bhattacharjee" --reverse --pretty=format:"%cd  %h  %an  %s" --date=short | cat | wc -l
+
+### put all file paths that needs to be changed and run sed file replace on all of them
+
+git diff and find only the file names
+
+    git diff --name-only mario_26_code_coverage dev | cat > file_path.txt
+     
+run sed file replace on all of them
+
+    cat file_path.txt| xargs sed -i 's/old/new/g'
