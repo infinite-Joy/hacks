@@ -103,3 +103,7 @@ git diff and find only the file names
 run sed file replace on all of them
 
     cat file_path.txt| xargs sed -i 's/old/new/g'
+
+### find old word to be replaced and replace them everywhere in the project
+
+    grep -r old_word * | cut -d ":" -f1 | grep -v Binary | grep -v .ropeproject | sort | uniq | xargs -L1 sed -i.bak -e 's/old_word/new_word/g'
