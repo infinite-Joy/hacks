@@ -107,3 +107,15 @@ run sed file replace on all of them
 ### find old word to be replaced and replace them everywhere in the project
 
     grep -r old_word * | cut -d ":" -f1 | grep -v Binary | grep -v .ropeproject | sort | uniq | xargs -L1 sed -i.bak -e 's/old_word/new_word/g'
+
+### Setup vim based code jump in code
+
+You need to have exuberant ctags installed first.
+
+    sudo apt-get install exuberant-ctags
+    
+Run the following command in your code.
+
+    ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
+    
+ That should create a tag file in your root folder.
