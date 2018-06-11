@@ -31,3 +31,6 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle
 git clone git://github.com/tpope/vim-fireplace.git
 
+# need to compile youcompleteme so that it works ok
+cd ~/.vim/bundle/YouCompleteMe
+python install.py --clang-completer
