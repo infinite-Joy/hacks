@@ -18,6 +18,8 @@ Plugin 'gmarik/Vundle.vim'
 " for javascript
 Plugin 'pangloss/vim-javascript'
 
+let g:pymode_python = 'python3'
+
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
@@ -140,6 +142,11 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+" surround your words with specific delimiters
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
+
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
@@ -150,4 +157,3 @@ call vundle#end()            " required
 filetype plugin on
 
 filetype plugin indent on    " required
-
