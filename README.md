@@ -119,3 +119,12 @@ Run the following command in your code.
     ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
     
  That should create a tag file in your root folder.
+ 
+ ### Keep track of the memory with time stamp
+ 
+    ➜  ~ vm_stat 10 | gawk 'NR>2 {now=strftime("%Y-%m-%d %T "); gsub("K","000");print now ($1+$4)/256000}'
+    2018-08-25 21:40:55 6.16284
+    2018-08-25 21:41:05 6.79999
+    2018-08-25 21:41:15 6.57524
+    2018-08-25 21:41:25 6.75619
+    2018-08-25 21:41:35 6.40904
