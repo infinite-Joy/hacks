@@ -131,4 +131,4 @@ Run the following command in your code.
 
 ### Check if all the lines in a jsonl file are valid json.
 
-while read line; do echo $line | python -c "import sys,json;json.loads(sys.stdin.read())"; done < filename.jsonl
+    $ while read line; do echo $line | python -c "import sys,json;json.loads(sys.stdin.read())"; done < filename.jsonl
