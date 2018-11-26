@@ -128,3 +128,7 @@ Run the following command in your code.
     2018-08-25 21:41:15 6.57524
     2018-08-25 21:41:25 6.75619
     2018-08-25 21:41:35 6.40904
+
+### Check if all the lines in a jsonl file are valid json.
+
+while read line; do echo $line | python -c "import sys,json;json.loads(sys.stdin.read())"; done < filename.jsonl
