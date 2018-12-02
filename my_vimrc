@@ -92,6 +92,10 @@ Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 
+" Python syntax  highlighting
+Plugin 'syntax/python.vim'
+let python_highlight_all = 1
+
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
@@ -145,6 +149,25 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " surround your words with specific delimiters
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+
+" connection to hound server
+Plugin 'jfo/hound.vim'
+let g:hound_base_url = "hound.roaminsight.net"
+let g:hound_port = "6080"
+let g:hound_ignore_case = 1
+let g:hound_vertical_split = 1
+
+" python refactoring
+" cd ~/.vim/bundle
+" git clone https://github.com/python-rope/ropevim.git
+let ropevim_vim_completion=1
+
+" rust development
+Plugin 'rust-lang/rust.vim'
+
+" check yaml
+Plugin 'avakhov/vim-yaml'
+
 
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
