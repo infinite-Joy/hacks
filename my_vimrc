@@ -62,7 +62,7 @@ Plugin 'tmhedberg/SimpylFold'
 
 let g:SimpylFold_docstring_preview=1
 
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.py *.rs
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -99,6 +99,9 @@ let python_highlight_all = 1
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+" mypy support
+Plugin 'integralist/vim-mypy'
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -130,6 +133,10 @@ else
 endif
 ":colors zenburn
 
+if $ITERM_PROFILE == 'demo'
+  colorscheme koehler
+endif
+
 call togglebg#map("<F5>")
 
 Plugin 'scrooloose/nerdtree'
@@ -141,6 +148,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 Plugin 'kien/ctrlp.vim'
 
 set nu
+set statusline+=%F
 
 Plugin 'tpope/vim-fugitive'
 
@@ -164,6 +172,7 @@ let ropevim_vim_completion=1
 
 " rust development
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 
 " check yaml
 Plugin 'avakhov/vim-yaml'
