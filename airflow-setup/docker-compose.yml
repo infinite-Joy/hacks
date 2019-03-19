@@ -1,0 +1,70 @@
+# Run `eval $(aws ecr get-login --region us-west-2)` to sign into ECR
+version: "2"
+services:
+  redis:
+    image: redis:5.0.3
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:10
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    ports:
+      - "5432:5432"
+    env_file:
+      - config_files/environment.sh
+    volumes:
+      - path to postgres db/db/:/var/lib/postgresql/data
+
+  airflow:
+    # image: apache/airflow
+    build: .
+    # restart: always
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8080:8080"
+    env_file:
+      - config_files/environment.sh
+    environment:
+      - APP_SETTINGS=config.config
+      - CONTAINER_COMMAND=webserver
+    volumes:
+      - path to dags folder/dags:/usr/local/airflow/dags
+    extra_hosts:
+      - localhost:$LOCAL_IP4
+
+  scheduler:
+    # restart: always
+    build: .
+    depends_on:
+      - airflow
+    env_file:
+      - config_files/environment.sh
+    environment:
+      - CONTAINER_COMMAND=scheduler
+    volumes:
+      - path to dags folder/dags:/usr/local/airflow/dags
+    extra_hosts:
+      - localhost:$LOCAL_IP4
+
+  worker:
+    # restart: always
+    build: .
+    depends_on:
+      - scheduler
+      - airflow
+    ports:
+      - "8793:8793"
+    env_file:
+      - config_files/environment.sh
+    environment:
+      - CONTAINER_COMMAND=worker
+    volumes:
+      - path to dags folder/dags:/usr/local/airflow/dags
+    extra_hosts:
+      - localhost:$LOCAL_IP4
