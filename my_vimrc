@@ -12,6 +12,12 @@ call vundle#begin()
 call pathogen#infect()
 call pathogen#helptags()
 
+" don't use arrowkeys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
