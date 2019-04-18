@@ -34,3 +34,13 @@ git clone git://github.com/tpope/vim-fireplace.git
 # need to compile youcompleteme so that it works ok
 cd ~/.vim/bundle/YouCompleteMe
 python install.py --clang-completer
+
+# for latex
+➜  working_with_data git:(master) ✗ cat ~/.vim/mysnippets/UltiSnips/tex.snippets 
+snippet code "Code environment" b
+\begin{lstlisting}[caption={$1}]
+$0
+\end{lstlisting}
+endsnippet
+➜  working_with_data git:(master) ✗ 
+
