@@ -132,3 +132,7 @@ Run the following command in your code.
 ### Check if all the lines in a jsonl file are valid json.
 
     $ while read line; do echo $line | python -c "import sys,json;json.loads(sys.stdin.read())"; done < filename.jsonl
+
+### change shell to fish
+
+https://gist.github.com/ghaiklor/5c393e1c27cab79a9258
