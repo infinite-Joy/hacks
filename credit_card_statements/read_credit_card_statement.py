@@ -18,7 +18,7 @@ def read_pdf_and_get_all_dataframes(filename, password):
 def get_amount(string):
     """Get amount from the string.
 
-    Generally string is in the format '230.45 Dr'
+    Generally string is in the format '10,230.45 Dr'
     """
     for s in string.split():
         try:
