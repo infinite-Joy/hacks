@@ -2,7 +2,6 @@ import tabula
 import pandas as pd
 import click
 
-#file = "560034_1002020003063579(1).pdf"
 
 def read_pdf_and_get_all_dataframes(filename, password):
     """
@@ -38,6 +37,7 @@ def normalise_to_numbers(statement_df):
 
 
 def get_final_amounts(debit, credit):
+    """We are going to assume that credit is positive and debit is negative."""
     return debit - credit
 
 
