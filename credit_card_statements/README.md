@@ -1,5 +1,7 @@
 # Understand cc statement
 
+This app will read the cc statement pdf file and then group and sum the expenses based on the business.
+
 To run this would need to pass in the following format
 
 1. Create the virtual environment
