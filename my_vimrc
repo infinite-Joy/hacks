@@ -18,6 +18,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" set default encoding
+set encoding=utf-8
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -33,23 +36,6 @@ set foldmethod=syntax
 
 set splitbelow
 set splitright
-
-" for haskell
-let g:haskell_enable_quantification = 1
-let g:haskell_enable_recursivedo = 1
-let g:haskell_enable_arrowsyntax = 1
-let g:haskell_enable_pattern_synonyms = 1
-let g:haskell_enable_typeroles = 1
-let g:haskell_enable_static_pointers = 1
-
-" haskell indentation depth
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_guard = 2
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -68,27 +54,28 @@ Plugin 'tmhedberg/SimpylFold'
 
 let g:SimpylFold_docstring_preview=1
 
-au BufNewFile,BufRead *.py *.rs
+au BufNewFile,BufRead *.py,*.rs
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
-    \ set fileformat=unix |
+    \ set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
 
 " use ghc functionality for haskell files
+"
 au BufNewFile,BufRead,Bufenter *.hs compiler ghc
-
 
 Plugin 'vim-scripts/indentpython.vim'
 
 highlight BadWhitespace ctermbg=red guibg=darkred
+
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
@@ -151,7 +138,14 @@ Plugin 'jistr/vim-nerdtree-tabs'
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
+" file searching in the project
 Plugin 'kien/ctrlp.vim'
+"
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|venv$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 set nu
 set statusline+=%F
@@ -164,13 +158,6 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 
-" connection to hound server
-Plugin 'jfo/hound.vim'
-let g:hound_base_url = "hound.roaminsight.net"
-let g:hound_port = "6080"
-let g:hound_ignore_case = 1
-let g:hound_vertical_split = 1
-
 " python refactoring
 " cd ~/.vim/bundle
 " git clone https://github.com/python-rope/ropevim.git
@@ -180,13 +167,14 @@ let ropevim_vim_completion=1
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 
-" check yaml
-Plugin 'avakhov/vim-yaml'
+" plugin search project directory
+" Do brew install the_silver_searcher first
+Plugin 'rking/ag.vim'
 
-
+" for grammer correction
+Plugin 'rhysd/vim-grammarous'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
