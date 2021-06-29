@@ -21,6 +21,9 @@ noremap <Right> <NOP>
 " set default encoding
 set encoding=utf-8
 
+" overriding the default backspace behavior
+set backspace=indent,eol,start
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -84,6 +87,7 @@ set encoding=utf-8
 Bundle 'ervandew/supertab'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
+Plugin 'davidhalter/jedi-vim'
 
 " Python syntax  highlighting
 Plugin 'syntax/python.vim'
@@ -147,7 +151,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
-set nu
+" set nu
+set relativenumber
 set statusline+=%F
 
 Plugin 'tpope/vim-fugitive'
